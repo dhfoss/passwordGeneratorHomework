@@ -18,7 +18,13 @@ function generatePassword() {
 
     //2. This section asks the user for a password length. It does not let the user continue if they enter in an invalid length, or if they enter in an invalid character.
     while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
-      passwordLength = parseInt(prompt("Enter in a number from 8-128"), 10);
+      passwordLength = parseInt(prompt("How long do you want your password? Enter in a number from 8-128"), 10);
+      if (passwordLength < 8 || passwordLength > 128) {
+        alert("Invalid length");
+      }
+      if (isNaN(passwordLength)) {
+        alert("Invalid entry");
+      }
     }
 
     //3. This section asks for which kind of characters to include in the password. It prevents the user from advancing if they say no to all characters.
@@ -33,58 +39,49 @@ function generatePassword() {
     }
 
     //4. This section gets all the possible characters that can be included in the password based on the prompts.
+    // It then ensures that at least one of each included character type is present in the password.
     if (includeLowerCase) {
       for (var i = 0; i < lowerCases.length; i++) {
         possiblePasswordCharacters.push(lowerCases[i]);
       }
+      password.push(lowerCases[Math.floor(Math.random() * lowerCases.length)]);
+      guaranteedPasswordCharacters = guaranteedPasswordCharacters + 1;
     }
     if (includeUpperCase) {
       for (var i = 0; i < upperCases.length; i++) {
         possiblePasswordCharacters.push(upperCases[i]);
       }
+      password.push(upperCases[Math.floor(Math.random() * upperCases.length)]);
+      guaranteedPasswordCharacters = guaranteedPasswordCharacters + 1;
     }
     if (includeNumbers) {
       for (var i = 0; i < numbers.length; i++) {
         possiblePasswordCharacters.push(numbers[i]);
       }
+      password.push(numbers[Math.floor(Math.random() * numbers.length)]);
+      guaranteedPasswordCharacters = guaranteedPasswordCharacters + 1;
     }
     if (includeSpecialCharacters) {
       for (var i = 0; i < specialCharacters.length; i++) {
         possiblePasswordCharacters.push(specialCharacters[i]);
       }
+      password.push(specialCharacters[Math.floor(Math.random() * specialCharacters.length)]);
+      guaranteedPasswordCharacters = guaranteedPasswordCharacters + 1;
     }
 
-    //5. If the user answered yes to any of the prompts, the next section makes sure to include one of each type of character they selected.
-    if (includeLowerCase) {
-        password.push(lowerCases[Math.floor(Math.random() * lowerCases.length)]);
-        guaranteedPasswordCharacters = guaranteedPasswordCharacters + 1;
-    }
-    if (includeUpperCase) {
-        password.push(upperCases[Math.floor(Math.random() * upperCases.length)]);
-        guaranteedPasswordCharacters = guaranteedPasswordCharacters + 1;
-    }
-    if (includeNumbers) {
-        password.push(numbers[Math.floor(Math.random() * numbers.length)]);
-        guaranteedPasswordCharacters = guaranteedPasswordCharacters + 1;
-    }
-    if (includeSpecialCharacters) {
-        password.push(specialCharacters[Math.floor(Math.random() * specialCharacters.length)]);
-        guaranteedPasswordCharacters = guaranteedPasswordCharacters + 1;
-    }
-
-    //6. This section gets the rest of the password characters, drawn from an array of all possible characters
+    //5. This section gets the rest of the password characters, drawn from an array of all possible characters
     for (var i = 0; i < passwordLength - guaranteedPasswordCharacters; i++) {
         password.push(possiblePasswordCharacters[Math.floor(Math.random() * possiblePasswordCharacters.length)]);
     }
 
-    //7. This section takes the current password array and randomizes the order. This ensures that passwords do not always start with the guarenteed characters generated from lines 39-55.
+    //6. This section takes the current password array and randomizes the order. This ensures that passwords do not always start with the guarenteed characters generated from lines 39-55.
     while (password.length > 0) {
         var r = Math.floor(Math.random() * password.length);
         shuffledPassword.push(password[r]);
         password.splice(r,1);
     }
 
-    //8. This section takes the shuffled password array and turns it into a string.
+    //7. This section takes the shuffled password array and turns it into a string.
     for (var i = 0; i < shuffledPassword.length; i++) {
         passwordString = passwordString + shuffledPassword[i];
     }
