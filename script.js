@@ -16,12 +16,9 @@ function generatePassword() {
     var shuffledPassword = [];
     var passwordString = [];
 
-    //2. This section asks the user for a password length. It does not let the user continue if they select an invalid length.
-    while (passwordLength < 8 || passwordLength > 128) {
-      passwordLength = prompt("How long do you want your password? Enter in a number from 8-128");
-      if (passwordLength < 8 || passwordLength > 128) {
-          alert("Invalid length. Enter in a number from 8-128");
-      }
+    //2. This section asks the user for a password length. It does not let the user continue if they enter in an invalid length, or if they enter in an invalid character.
+    while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
+      passwordLength = parseInt(prompt("Enter in a number from 8-128"), 10);
     }
 
     //3. This section asks for which kind of characters to include in the password. It prevents the user from advancing if they say no to all characters.
@@ -104,7 +101,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
