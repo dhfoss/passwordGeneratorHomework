@@ -1,5 +1,7 @@
 # passwordGeneratorHomework
 
+https://dhfoss.github.io/passwordGeneratorHomework/
+
 My password generator function has 7 sections in it, plus the code that was included in the assignment that adds an event listener to the button. The sections are as follows:
 
 *Section 1: First I define all the variables that I will be using in the function, including all four arrays that consist of all the possible characters that can be included in the password. I defined the variables as local variables rather than global variables so that I could reuse the function in a future app.
@@ -17,4 +19,7 @@ Section 6: This section randomizes the order of the password array.  This ensure
 
 Section 7: This takes the final password array, and converts it to a single string, ready to be displayed in the browser.
 
-*Assignment Code: the final section was provided by the assignment. It links the function to the button, making the app usable.
+*Assignment Code: the final section was provided by the assignment. It links the function to the button, making the app usable./Users/danielhawthorne-foss/Desktop/index.html Screen Shot 2020-10-01 at 12.31.38 PM.png/Users/danielhawthorne-foss/Desktop/Application Screen Shot 2020-10-01 at 12.32.18 PM.png
+/Users/danielhawthorne-foss/Desktop/script.js1 Screen Shot 2020-10-01 at 12.32.43 PM.png
+/Users/danielhawthorne-foss/Desktop/script.js2 Screen Shot 2020-10-01 at 12.32.53 PM.png
+/Users/danielhawthorne-foss/Desktop/script.js 3 Screen Shot 2020-10-01 at 12.33.06 PM.png
