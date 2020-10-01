@@ -25,7 +25,7 @@ Section 7: This takes the final password array, and converts it to a single stri
 
 
 ![Application Screen Shot](/assets/screenshots/Application-Screen-Shot.png?raw=true "Optional Title")
-![index.html Screen Shot](/assets/screenshots/index.html-Screen-Shot.png.jpg?raw=true "Optional Title")
+![Application Screen Shot](/assets/screenshots/index.html-Screen-Shot.png?raw=true "Optional Title")
 ![Script.js Screen Shot 1](/assets/screenshots/script.js1-Screen-Shot.png?raw=true "Optional Title")
 ![Script.js Screen Shot 2](/assets/screenshots/script.js2-Screen-Shot.png?raw=true "Optional Title")
 ![Script.js Screen Shot 3](/assets/screenshots/script.js3-Screen-Shot.png?raw=true "Optional Title")
